@@ -1,0 +1,91 @@
+
+<pronto>
+	<!-- tasks -->
+	<tasks>
+		<build name="build-pronto-core">
+			<taskLog>build</taskLog> <!-- Results of this task/output go here. Use 'null' for no output -->
+			<pkgNamespace>Pronto</pkgNamespace>
+			<pkgName>pronto_core</pkgName>
+			<pkgVersion>0.5.0</pkgVersion>
+			<pkgDebugLevel>0</pkgDebugLevel>
+			<pkgOptimizationLevel>2</pkgOptimizationLevel>
+			<pkgWriteToDisk>true</pkgWriteToDisk>
+			<pkgOutDir>..\output\</pkgOutDir>
+			<pkgAddComments>true</pkgAddComments>
+			<pkgAddSource>true</pkgAddSource>
+			<pkgARC>true</pkgARC> <!-- true to enable Automatic Reference Counting (ARC). Should always be true, except for specific debugging situations. -->
+			<pkgISAGen>false</pkgISAGen> <!-- Generate human readable assembly listing of code for each uarch, i.e. x86-64, ARMv8 -->
+			<pkgISAs>
+				<Bytecode>false</Bytecode>
+				<x86-64>true</x86-64>
+				<ARMv8-64>false</ARMv8-64>
+			</pkgISAs>
+			<pkgs>
+			</pkgs>
+			<srcs>
+				<src>core/HeapAllocator.pro</src>
+				<src>core/Primitives.pro</src>
+				<src>core/Collections.pro</src>
+				<src>core/Math.pro</src>
+				<src>core/Chars.pro</src>
+				<src>core/String.pro</src>
+				<src>core/Log.pro</src>
+				<src>core/DateTime.pro</src>
+				<src>core/ByteIO.pro</src>
+				<src>core/BigInteger.pro</src>
+				<src>core/Vector.pro</src>
+				<src>core/Matrix.pro</src>
+				<src>core/Geometry2D.pro</src>
+				<src>core/Geometry3D.pro</src>
+				<src>core/Pronto.pro</src>
+				<src>core/KeyInput.pro</src>
+				<src>core/MouseInput.pro</src>
+				<src>core/TouchInput.pro</src>
+				<src>core/GamepadInput.pro</src>
+				<src>core/Input.pro</src>
+				<src>core/Camera3D.pro</src>
+				<src>core/Color.pro</src>
+				<src>core/Image.pro</src>
+				<src>core/RenderTarget2D.pro</src>
+				<src>core/ImageRGBA.pro</src>
+				<src>core/Font.pro</src>
+				<src>core/RenderTarget3D.pro</src>
+				<src>core/GPUBuffers.pro</src>
+				<src>core/GPUTextures.pro</src>
+				<src>core/GPULanguage.pro</src>
+				<src>core/GPUShaders.pro</src>
+				<src>core/GPU.pro</src>
+				<src>core/Windows.pro</src>
+				<src>core/FileSystem.pro</src>
+				<src>core/INIFile.pro</src>
+				<src>core/Network.pro</src>
+				<src>core/XMapping.pro</src>
+				<src>core/JSON.pro</src>
+				<src>core/XML.pro</src>
+				<src>core/Hashing.pro</src>
+				<src>core/AES.pro</src>
+				<src>core/RSA.pro</src>
+				<src>core/DSA.pro</src>
+				<src>core/ECC.pro</src>
+				<src>core/X509.pro</src>
+				<src>core/TLS.pro</src>
+				<src>core/UUID.pro</src>
+				<src>core/HTTP.pro</src>
+				<src>core/SMTP.pro</src>
+				<src>core/HTML.pro</src>
+				<src>core/Task.pro</src>
+				<src>core/Performance.pro</src>
+			</srcs>
+			<files> <!-- Embedded files like images, documents etc. Can be accessed with package via HVM:getPackageFile() -->
+				<file>core/files/CertificateAuthorityCerts.txt</file>
+			</files>
+		</build>
+		<!-- 
+		<extract>
+			<pkgPath>..\output\pronto-core_0.5.0.pup</pkgPath>
+			<outDir>..\output\pronto-core-extract\</outDir>
+			<sources>true</sources>
+			<codeISA>true</codeISA>
+		</extract> -->
+	</tasks>
+</pronto>

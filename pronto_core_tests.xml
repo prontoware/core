@@ -1,0 +1,83 @@
+
+<pronto>
+	<!-- tasks -->
+	<tasks>
+		<build name="build-pronto-core-tests">
+			<pkgNamespace>Pronto</pkgNamespace>
+			<pkgName>pronto_core_tests</pkgName>
+			<pkgVersion>0.5.0</pkgVersion>
+			<pkgDebugLevel>0</pkgDebugLevel>
+			<pkgOptimizationLevel>2</pkgOptimizationLevel>
+			<pkgWriteToDisk>true</pkgWriteToDisk>
+			<pkgOutDir>..\output\</pkgOutDir>
+			<pkgAddComments>true</pkgAddComments>
+			<pkgAddSource>true</pkgAddSource>
+			<pkgARC>true</pkgARC> <!-- true to enable Automatic Reference Counting (ARC). Should always be true, except for specific debugging situations. -->
+			<pkgISAGen>false</pkgISAGen> <!-- Generate human readable assembly listing of code for each uarch, i.e. x86-64, ARMv8 -->
+			<pkgISAs>
+				<Bytecode>false</Bytecode>
+				<x86-64>true</x86-64>
+				<ARMv8-64>false</ARMv8-64>
+			</pkgISAs>
+			<pkgs>
+				<pkg>..\output\pronto_core_0.5.0.pup</pkg>
+			</pkgs>
+			<srcs>
+				<src>core-tests/HRTTests.pro</src>
+				<src>core-tests/CollectionsTests.pro</src>
+				<src>core-tests/MathTests.pro</src>
+				<src>core-tests/CharsTests.pro</src>
+				<src>core-tests/StringTests.pro</src>
+				<src>core-tests/DateTimeTests.pro</src>
+				<src>core-tests/ByteIOTests.pro</src>
+				<src>core-tests/BigIntegerTests.pro</src>
+				<src>core-tests/Geometry2DTests.pro</src>
+				<src>core-tests/Geometry3DTests.pro</src>
+				<src>core-tests/Camera3DTests.pro</src>
+				<src>core-tests/Graphics2DTests.pro</src>
+				<src>core-tests/FileSystemTests.pro</src>
+				<src>core-tests/INIFileTests.pro</src>
+				<src>core-tests/NetworkTests.pro</src>
+				<src>core-tests/JSONTests.pro</src>
+				<src>core-tests/XMLTests.pro</src>
+				<src>core-tests/HashingTests.pro</src>
+				<src>core-tests/HTTPTests.pro</src>
+				<src>core-tests/SMTPTests.pro</src>
+				<src>core-tests/HTMLTests.pro</src>
+				<src>core-tests/WindowTests.pro</src>
+				<src>core-tests/ShaderTests.pro</src>
+				<src>core-tests/Graphics3DTests.pro</src>
+				<src>core-tests/ProfilingTests.pro</src>
+				<src>core-tests/AESTests.pro</src>
+				<src>core-tests/RSATests.pro</src>
+				<src>core-tests/ECCTests.pro</src>
+				<src>core-tests/X509Tests.pro</src>
+				<src>core-tests/TLSTests.pro</src>
+				<src>core-tests/PerformanceTests.pro</src>
+			</srcs>
+			<files> <!-- Embedded files like images, documents, test data etc. Can be accessed with package via HVM:getPackageFile(filename) -->
+				<file>core-tests/files/XMLTestDataLarge.xml</file>
+			</files>
+		</build>
+
+		<execute name="execute-pronto-core-tests" _testvar="This is a startup variable, similar to a command line argument.">
+			<hrtType>native</hrtType> <!-- native or interp -->
+			<!-- <stackSize>1048576</stackSize> -->
+			<stackSize>10485760</stackSize>
+			<heapSize>4294967296</heapSize> <!-- 2147483648 = 2 GB -->
+			<mainFunc>__TEST__pronto_core_tests</mainFunc>
+			<exeISAGen>false</exeISAGen> <!-- generate machine instructions text file for each package for debugging purposes -->
+			<highPerfCPU>true</highPerfCPU>
+			<debugger>true</debugger> <!-- true or false. true enabled breakpoints, causes extra checks at cost of performance. -->
+			<profiler>true</profiler> <!-- true or false. true enables profiling -->
+			<debugIP>0.0.0.0:0</debugIP>
+			<runtimeARC>true</runtimeARC> <!-- true to enable Automatic Reference Counting (ARC). Should always be true, except for specific debugging situations. -->
+			<runtimeGC>true</runtimeGC> <!-- true to enable Garbage Collector (GC). Should always be true, except for specific debugging situations. -->
+			<rootDir></rootDir>
+			<pkgs>
+				<pkg>../output/pronto_core_0.5.0.pup</pkg>
+				<pkg>../output/pronto_core_tests_0.5.0.pup</pkg>
+			</pkgs>
+		</execute>
+	</tasks>
+</pronto>
